@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use this module in your publication, please cite as below."
+type: software
+title: "scRNA-seq Normalization Methods"
+abstract: |
+  A module created with OmniBenchmark for computational benchmarking.
+authors:
+  - family-names: "Robinson"
+    given-names: "Mark"
+    email: "mark.robinson@mls.uzh.ch"
+date-released: "2026-04-15"
+version: "1.0.0"
+license: MIT
+url: "https://github.com/CHANGE_ME/3-normalize"
+repository-code: "https://github.com/CHANGE_ME/3-normalize"
+keywords:
+  - bioinformatics
+  - computational-biology
+  - benchmark
+  - omnibenchmark
+  - module
+references:
+  - title: "Original implementation"
+    authors:
+      - family-names: "Robinson"
+        given-names: "Mark"
+    type: software
+    url: "https://github.com/CHANGE_ME/3-normalize"
