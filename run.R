@@ -1,6 +1,7 @@
 #!/usr/bin/env Rscript
 
 library(argparse)
+library(anndataR)
 library(Matrix)
 
 # Parse command line arguments
