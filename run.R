@@ -23,7 +23,7 @@ parser$add_argument("--rawdata.h5ad", dest="input_h5", type="character", help="i
 
 args <- parser$parse_args()
 
-cat("Full command: ", paste0(commandArgs(), collapse = " "))
+cat("Full command: ", paste0(commandArgs(), collapse = " "), "\n")
 cat("output_dir:", args$output_dir, "\n")
 cat("name:", args$name, "\n")
 cat("normalization_type:", args$normalization_type, "\n")
@@ -45,5 +45,9 @@ if (args$normalization_type == "seurat_log1pCP10k") {
   errorCondition("incorrect 'normalization_type' specified")
 }
 
+cat("class(d):", class(d), "\n")
+cat("dim(d):", dim(d), "\n")
+cat("output_file:", dim(d), "\n")
 output_file <- file.path(args$output_dir, paste0(args$name, "_normalized.mtx"))
+cat("output_file:", output_file, "\n")
 writeMM(d, output_file)
