@@ -58,5 +58,5 @@ cat("class(d):", class(d), "\n")
 cat("dim(d):", dim(d), "\n")
 output_file <- file.path(args$output_dir, paste0(args$name, "_normalized.mtx.gz"))
 cat("output_file:", output_file, "\n")
-dummy <- writeMM(d, gzfile(output_file))
+writeMM(d, gzfile(output_file))
 file.info(output_file)[,c("size", "ctime")]
