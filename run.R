@@ -23,7 +23,7 @@ parser$add_argument("--normalization_type", dest="normalization_type", type="cha
 parser$add_argument("--rawdata.h5ad", dest="input_h5", type="character", help="input file")
 
 # parameter for filtered cell ids
-parser$add_argument("--filter.cellids", dest="cellids", type="character", help="input file")
+parser$add_argument("--filtered.cellids", dest="cellids", type="character", help="input file")
 
 args <- parser$parse_args()
 
