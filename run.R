@@ -57,7 +57,7 @@ if (args$normalization_type == "seurat_log1pCP10k") {
 
 cat("class(d):", class(d), "\n")
 cat("dim(d):", dim(d), "\n")
-output_file <- file.path(args$output_dir, paste0(args$name, "_normalized.mtx.gz"))
+output_file <- file.path(args$output_dir, paste0(args$name, "_normalized.h5"))
 cat("output_file:", output_file, "\n")
 writeTENxMatrix(d, output_file, group="matrix")
 file.info(output_file)[,c("size", "ctime")]
