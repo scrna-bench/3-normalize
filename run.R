@@ -3,6 +3,7 @@
 library(argparse)
 library(anndataR)
 library(Matrix)
+library(HDF5Array)
 
 # Parse command line arguments
 parser <- ArgumentParser(description="OmniBenchmark module")
@@ -57,12 +58,6 @@ if (args$normalization_type == "seurat_log1pCP10k") {
 cat("class(d):", class(d), "\n")
 cat("dim(d):", dim(d), "\n")
 output_file <- file.path(args$output_dir, paste0(args$name, "_normalized.mtx.gz"))
-dummy_file <- file.path(args$output_dir, paste0("dummy.txt"))
-writeLines(head(cellids), dummy_file)
 cat("output_file:", output_file, "\n")
-writeMM(d, gzfile(output_file))
-dummy_file <- file.path(args$output_dir, paste0("dummy2.txt"))
-writeLines(head(cellids), dummy_file)
-file.info(dummy_file)[,c("size", "ctime")]
-file.info(output_file)[,c("size", "ctime")]
+writeTENxMatrix(d, output_file, group="matrix")
 file.info(output_file)[,c("size", "ctime")]
