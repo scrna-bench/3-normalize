@@ -31,9 +31,9 @@ cat("output_dir:", args$output_dir, "\n")
 cat("name:", args$name, "\n")
 cat("normalization_type:", args$normalization_type, "\n")
 cat("input_h5:", args$input_h5, "\n")
-cat("cellids:", args$filter.cellids, "\n")
+cat("cellids:", args$cellids, "\n")
 
-cellids <- readLines(gzfile(args$filter.cellids))
+cellids <- readLines(gzfile(args$cellids))
 cat("length(cellids):", length(cellids), "\n")
 
 if (args$normalization_type == "seurat_log1pCP10k") {
