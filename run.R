@@ -1,9 +1,11 @@
 #!/usr/bin/env Rscript
 
-library(argparse)
-library(anndataR)
-library(Matrix)
-library(HDF5Array)
+suppressPackageStartupMessages({
+  library(argparse)
+  library(anndataR)
+  library(Matrix)
+  library(HDF5Array)
+})
 
 # Parse command line arguments
 parser <- ArgumentParser(description="OmniBenchmark module")
@@ -20,10 +22,12 @@ parser$add_argument("--name", dest="name", type="character", required=TRUE,
 parser$add_argument("--normalization_type", dest="normalization_type", type="character", help="Input file")
 
 # parameter for 'input_h5' (comes from 1st stage)
-parser$add_argument("--rawdata.h5ad", dest="input_h5", type="character", help="input file")
+parser$add_argument("--rawdata.h5ad", dest="input_h5", type="character", 
+                    help="input file", required = TRUE)
 
 # parameter for filtered cell ids
-parser$add_argument("--filtered.cellids", dest="cellids", type="character", help="input file")
+parser$add_argument("--filtered.cellids", dest="cellids", type="character", 
+                    help="input file")
 
 args <- parser$parse_args()
 
